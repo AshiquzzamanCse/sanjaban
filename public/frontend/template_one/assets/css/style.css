@@ -2796,7 +2796,7 @@ ul.sub__menu.sub__dept--menu li:hover ul.sub__menu.level2 {
 /* 9. Brand */
 .brand-active {
     padding-top: 35px;
-    border-top: 1px solid #e0e0e0;
+    /* border-top: 1px solid #e0e0e0; */
     padding-bottom: 35px;
 }
 

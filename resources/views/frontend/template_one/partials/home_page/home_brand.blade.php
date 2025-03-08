@@ -4,7 +4,7 @@
 
 
 @if (count($brands) > 0)
-    <div class="brand bg-light">
+    <div class="brand">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12">
