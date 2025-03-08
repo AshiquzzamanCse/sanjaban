@@ -30,7 +30,7 @@
                                             <a
                                                 href="{{ url('product/category/' . $category->id . '/' . $category->category_slug) }}">
                                                 <img class="border img-fluid"
-                                                    src="{{ asset('storage/category/' . $category->icon) }}"
+                                                    src="{{ asset('storage/category/' . $category->category_image) }}"
                                                     style="width: 100%; height: 275px; object-fit: cover;" alt=""
                                                     onerror="this.onerror=null; this.src='{{ asset('img/category-not-found.jpg') }}';"/>
                                             </a>

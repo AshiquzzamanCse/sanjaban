@@ -260,30 +260,30 @@ Route::middleware(['auth:admin', 'verified'])->group(function () {
     });
 
     //HomePage Section
-    Route::controller(HomePageController::class)->prefix('home-page')->group(function () {
+    // Route::controller(HomePageController::class)->prefix('home-page')->group(function () {
 
-        Route::get('/all', 'AllHome')->name('all.home')->middleware('permission:all.home');
-        Route::get('/edit/{id}', 'EditHome')->name('edit.home');
-        Route::post('/update', 'UpdateHome')->name('update.home');
-        Route::get('/delete/{id}', 'DeleteHome')->name('delete.home');
+    //     Route::get('/all', 'AllHome')->name('all.home')->middleware('permission:all.home');
+    //     Route::get('/edit/{id}', 'EditHome')->name('edit.home');
+    //     Route::post('/update', 'UpdateHome')->name('update.home');
+    //     Route::get('/delete/{id}', 'DeleteHome')->name('delete.home');
 
-        Route::get('/delete-video/{filename}', 'DeleteVideo')->name('delete.video');
-        Route::get('/delete-video2/{filename}', 'DeleteVideo2')->name('delete.video2');
-    });
+    //     Route::get('/delete-video/{filename}', 'DeleteVideo')->name('delete.video');
+    //     Route::get('/delete-video2/{filename}', 'DeleteVideo2')->name('delete.video2');
+    // });
 
     //Single Page Section
-    Route::controller(SinglePageController::class)->prefix('single-page')->group(function () {
+    // Route::controller(SinglePageController::class)->prefix('single-page')->group(function () {
 
-        Route::get('/all', 'AllSinglePage')->name('all.single.page')->middleware('permission:all.sproduct');
-        Route::get('/add', 'AddSinglePage')->name('add.single.page');
-        Route::post('/store', 'StoreSinglePage')->name('store.single.page');
-        Route::get('/edit/{id}', 'EditSinglePage')->name('edit.single.page');
-        Route::post('/update', 'UpdateSinglePage')->name('update.single.page');
-        Route::get('/delete/{id}', 'DeleteSinglePage')->name('delete.single.page');
+    //     Route::get('/all', 'AllSinglePage')->name('all.single.page')->middleware('permission:all.sproduct');
+    //     Route::get('/add', 'AddSinglePage')->name('add.single.page');
+    //     Route::post('/store', 'StoreSinglePage')->name('store.single.page');
+    //     Route::get('/edit/{id}', 'EditSinglePage')->name('edit.single.page');
+    //     Route::post('/update', 'UpdateSinglePage')->name('update.single.page');
+    //     Route::get('/delete/{id}', 'DeleteSinglePage')->name('delete.single.page');
 
-        Route::get('/inactive/{id}', 'InactiveSinglePage')->name('inactive.single.page');
-        Route::get('/active/{id}', 'ActiveSinglePage')->name('active.single.page');
-    });
+    //     Route::get('/inactive/{id}', 'InactiveSinglePage')->name('inactive.single.page');
+    //     Route::get('/active/{id}', 'ActiveSinglePage')->name('active.single.page');
+    // });
 
     //Template Section
     Route::controller(TemplateController::class)->prefix('template')->group(function () {
