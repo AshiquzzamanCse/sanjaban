@@ -1,6 +1,6 @@
 @extends('frontend.template_one.frontend_dashboard_template_one')
 @section('index_template_one')
-@section('title', 'Dada Bhaai')
+@section('title', 'Sanjaban')
 <!-- hero  -->
 @include('frontend.template_one.partials.home_page.hero')
 <!-- Hero end -->
@@ -14,7 +14,7 @@
 <!-- Discover All Product end -->
 
 <!-- Weekly Deals -->
-@include('frontend.template_one.partials.home_page.home_weekly_offer')
+{{-- @include('frontend.template_one.partials.home_page.home_weekly_offer') --}}
 <!-- Weekly Deals end -->
 
 <!-- Latest Items   -->
@@ -31,7 +31,7 @@
 
 
 <!-- Latest Offer  -->
-@include('frontend.template_one.partials.home_page.latest_offer')
+{{-- @include('frontend.template_one.partials.home_page.latest_offer') --}}
 <!-- Latest Offer end -->
 
 <!-- Brand -->
