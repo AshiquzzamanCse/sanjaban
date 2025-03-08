@@ -12,7 +12,8 @@
                         @foreach ($brands as $brand)
                             <div class="p-3 single-brand">
                                 <a href="{{ url('product/brand/' . $brand->id . '/' . $brand->brand_slug) }}">
-                                    <img class="img-fluid" src="{{ asset('storage/brand/' . $brand->icon) }}" alt="{{ $brand->brand_name }}"
+                                    <img style="width: 150px;" class="img-fluid"
+                                        src="{{ asset('storage/brand/' . $brand->icon) }}" alt="{{ $brand->brand_name }}"
                                         onerror="this.onerror=null; this.src='{{ asset('https://dadabhaai.com/upload/logo_white/202406290352Dadabhaai%20Logo%20White%20Variant.png') }}';" />
                                 </a>
                             </div>
