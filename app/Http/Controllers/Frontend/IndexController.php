@@ -1,18 +1,14 @@
 <?php
-
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Admin\About;
-use App\Models\Admin\Category;
 use App\Models\Admin\Contact;
 use App\Models\Admin\Faq;
-use App\Models\Admin\HomePage;
 use App\Models\Admin\MultiImg;
 use App\Models\Admin\Product;
 use App\Models\Admin\ProductSinglePage;
 use App\Models\Admin\Template;
-use App\Models\Banner;
 use App\Models\Brand;
 use App\Models\User;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -32,17 +28,21 @@ class IndexController extends Controller
         if ($template->name == 'template_one') {
 
             return view('frontend.template_one.index_template_one');
-        } else if ($template->name == 'template_two') {
-
-            $homepage = HomePage::with(['featureProductOne', 'featureProductTwo', 'featureProductThree', 'featureProductFour'])->where('status', 'tamplate_two')->latest('id')->first();
-
-            return view('frontend.astell.index_astell', compact('homepage'));
-        } else if ($template->name == 'template_three') {
-            $banners = Banner::where('status', '1')->orderBy('id', 'ASC')->latest()->get();
-            $categorys = Category::where('status', '1')->orderBy('category_name', 'ASC')->latest()->get();
-
-            return view('frontend.index', compact('banners', 'categorys'));
         }
+
+        // else if ($template->name == 'template_two') {
+
+        //     $homepage = HomePage::with(['featureProductOne', 'featureProductTwo', 'featureProductThree', 'featureProductFour'])->where('status', 'tamplate_two')->latest('id')->first();
+
+        //     return view('frontend.astell.index_astell', compact('homepage'));
+        // }
+
+        // else if ($template->name == 'template_three') {
+        //     $banners = Banner::where('status', '1')->orderBy('id', 'ASC')->latest()->get();
+        //     $categorys = Category::where('status', '1')->orderBy('category_name', 'ASC')->latest()->get();
+
+        //     return view('frontend.index', compact('banners', 'categorys'));
+        // }
     }
 
     //Template OneProduct
@@ -52,24 +52,25 @@ class IndexController extends Controller
 
         $product = Product::with('productSinglePage')->find($id);
 
-        if (!empty($product->productSinglePage) && $product->productSinglePage->status === 'active') {
+        // if (! empty($product->productSinglePage) && $product->productSinglePage->status === 'active') {
 
-            // $product = Product::find($id);
-            $sproducts = $product->productSinglePage;
-            $multiImages = MultiImg::where('product_id', $product->id)->get();
+        //     // $product = Product::find($id);
+        //     $sproducts   = $product->productSinglePage;
+        //     $multiImages = MultiImg::where('product_id', $product->id)->get();
 
-            return view('frontend.astell.pages.single_product', compact('product', 'sproducts', 'multiImages'));
-        } else {
+        //     return view('frontend.astell.pages.single_product', compact('product', 'sproducts', 'multiImages'));
+        // }
 
-            $color = $product->color_id;
+        // else {
+
+            $color          = $product->color_id;
             $product_colors = explode(' ', $color);
 
             $multiImages = MultiImg::where('product_id', $product->id)->limit(3)->get();
 
             //Releted Category
-            $cat_id = $product->childcategory_id;
+            $cat_id          = $product->childcategory_id;
             $relativeProduct = Product::where('childcategory_id', $cat_id)->where('id', '!=', $id)->orderBy('id', 'ASC')->limit(5)->get();
-
 
             // $child_id = $product->child_id;
             $child_ids = explode(',', $product->child_id);
@@ -81,12 +82,11 @@ class IndexController extends Controller
                     ->first();
             }
 
-            $carts = Cart::content();
+            $carts   = Cart::content();
             $cartQty = Cart::count();
 
-
             return view('frontend.template_one.product.single_product', compact('product', 'relativeProduct', 'multiImages', 'relativeChild', 'product_colors', 'carts', 'cartQty'));
-        }
+        // }
     }
 
     //Single Product
@@ -94,16 +94,16 @@ class IndexController extends Controller
     {
         $product = Product::find($id);
 
-        $color = $product->color_id;
+        $color          = $product->color_id;
         $product_colors = explode(',', $color);
 
         $multiImages = MultiImg::where('product_id', $product->id)->get();
 
         //Related product
-        $cat_id = $product->category_id;
+        $cat_id          = $product->category_id;
         $relativeProduct = Product::where('category_id', $cat_id)->where('id', '!=', $id)->orderBy('id', 'ASC')->limit(5)->get();
 
-        $carts = Cart::content();
+        $carts   = Cart::content();
         $cartQty = Cart::count();
 
         return view('frontend.pages.product.single_product', compact('product', 'multiImages', 'relativeProduct', 'product_colors', 'carts', 'cartQty'));
@@ -126,7 +126,6 @@ class IndexController extends Controller
     public function SendMessage(Request $request)
     {
 
-
         $typePrefix = 'MSG';
 
         $today = date('dmy');
@@ -141,12 +140,12 @@ class IndexController extends Controller
 
         Contact::insert([
 
-            'name' => $request->name,
-            'email' => $request->email,
-            'phone' => $request->phone,
+            'name'    => $request->name,
+            'email'   => $request->email,
+            'phone'   => $request->phone,
             'address' => $request->address,
             'message' => $request->message,
-            'code' => $code,
+            'code'    => $code,
 
         ]);
 
@@ -164,7 +163,7 @@ class IndexController extends Controller
     //Brand Page
     public function BrandWiseProduct($id)
     {
-        $products = Product::where('brand_id', $id)->paginate(3);
+        $products  = Product::where('brand_id', $id)->paginate(3);
         $brandname = Brand::where('id', $id)->first();
 
         return view('frontend.pages.product.brand_wise_product', compact('products', 'brandname'));
@@ -198,12 +197,12 @@ class IndexController extends Controller
         $user = User::where('email', $data->email)->first();
 
         // If user doesn't exist, create a new one
-        if (!$user) {
-            $user = new User();
-            $user->name = $data->name;
-            $user->email = $data->email;
+        if (! $user) {
+            $user            = new User();
+            $user->name      = $data->name;
+            $user->email     = $data->email;
             $user->google_id = $data->id;
-            // Generate a random password for the user
+                                                          // Generate a random password for the user
             $user->password = Hash::make(Str::random(8)); // You can adjust the password length as needed
             $user->save();
         }
