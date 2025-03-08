@@ -1873,7 +1873,7 @@
 
 <script>
     $(window).load(function() {
-        $(".loader").fadeOut(3000);
+        $(".loader").fadeOut(500);
     });
 </script>
 {{-- <script>

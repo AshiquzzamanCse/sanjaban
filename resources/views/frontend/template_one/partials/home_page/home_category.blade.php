@@ -5,6 +5,7 @@
 <div class="top__featured--area pt-50 pb-50">
     <div class="container">
         <div class="row">
+
             <div class="col-xl-2 slider-category">
                 <div class="top__featured--title">
                     <span class="dusty__gray-color text-uppercase">Top Featured</span>
@@ -14,6 +15,7 @@
                     </h3>
                 </div>
             </div>
+
             <div class="col-xl-10">
                 <div class="categories-active row position-relative">
                     @if (count($products) > 0)

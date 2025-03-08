@@ -10,7 +10,7 @@
         width: 100%;
         height: 100%;
         z-index: 11111;
-        background: url("{{ asset('img/giphy.webp') }}") 50% 50% no-repeat white;
+        background: url("{{ asset('img/Logo.jpg') }}") 50% 50% no-repeat white;
     }
 </style>
 
