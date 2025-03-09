@@ -181,7 +181,7 @@
                     {{-- All Brands Menu --}}
 
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link main-menu-link dropdown-toggle" href="javascript:void(0)" id="navbarDropdown"
+                        <a class="nav-link main-menu-link" href="javascript:void(0)" id="navbarDropdown"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Brands
                         </a>
@@ -237,7 +237,7 @@
                     </li>
 
                     {{-- All Offer Menu --}}
-                    <li class="nav-item dropdown position-static">
+                    {{-- <li class="nav-item dropdown position-static">
                         <a class="nav-link dropdown-toggle main-menu-link" href="#" id="navbarDropdownPricing"
                             role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Offers
@@ -282,21 +282,19 @@
                                 </div>
                             </div>
                         </div>
+                    </li> --}}
+
+                    <li class="nav-item active">
+                        <a class="nav-link main-menu-link" href="{{ route('template.one.all_product') }}">Best Selling
+                            <span class="sr-only">(current)</span></a>
                     </li>
+
                     <li class="nav-item active">
                         <a class="nav-link main-menu-link" href="{{ route('template.one.all_product') }}">Products
                             <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
-
-            <!-- Search Form -->
-            {{-- <form class="my-2 ml-auto form-inline my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="my-2 btn btn-outline-light my-sm-0" type="submit">
-                    <i class="fas fa-search"></i>
-                </button>
-            </form> --}}
 
             <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
@@ -318,9 +316,6 @@
                                         aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
                                         <i class="fa-solid fa-user text-danger userLogin"></i>
 
-                                        {{-- <img src="{{  url('https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name)) }}"
-                                            style="width: 40px;height:40px;" alt="">
-                                            {{ Auth::user()->name }} --}}
                                     </a>
                                 @else
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
@@ -334,10 +329,7 @@
                                     style="">
 
                                     @if (Auth::user())
-                                        {{-- <p class="pl-3 text-muted">First time here? <a
-                                                href="{{ route('template.one.login') }}" class="text-danger">Sign
-                                                Up</a>
-                                        </p> --}}
+
                                         <a class="dropdown-item" href="{{ route('template.one.dashboard') }}">
 
                                             <img src="{{ url('https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name)) }}"
