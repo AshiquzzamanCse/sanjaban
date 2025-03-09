@@ -24,7 +24,7 @@
         .searchbox-icon,
         .searchbox-submit {
             color: #ffffff;
-            background: #dc3545;
+            background: #44A14C;
         }
 
         .navbar-light .navbar-toggler {
@@ -68,7 +68,8 @@
                     ->latest()
                     ->get();
             @endphp
-            <ul class="ml-auto navbar-nav">
+            {{-- <ul class="ml-auto navbar-nav">
+
                 <li class="nav-item dropdown position-static">
                     <a class="mb-0 nav-link dropdown-toggle card-title cod__gray-color main-menu-link" href="#"
                         id="navbarDropdownFeatures" role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -161,7 +162,7 @@
                         </div>
                     </div>
                 </li>
-            </ul>
+            </ul> --}}
             <!-- Navbar Toggler -->
 
             {{-- <button class="navbar-toggler bg-primary" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -481,6 +482,7 @@
         </nav>
     </div>
 </section>
+
 <section class="sticky-navbar desktop-remove">
     <nav class="py-3 navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
