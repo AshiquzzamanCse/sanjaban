@@ -267,11 +267,11 @@
                                                             </div>
                                                             <div class="py-3 text-center">
                                                                 <a href="">
-                                                                    <small style="color: #ed2129;">Compare</small>
+                                                                    <small style="color: #44A14C;">Compare</small>
                                                                 </a>
                                                                 <a href="javascript:void(0)">|</a>
                                                                 <a href="">
-                                                                    <small style="color: #ed2129;">Wishlist</small>
+                                                                    <small style="color: #44A14C;">Wishlist</small>
                                                                 </a>
 
                                                             </div>

@@ -73,7 +73,7 @@
                                             placeholder="Enter Email Address" required>
 
                                         <div class="input-group-append">
-                                            <button class="px-3 btn btn-outline-secondary" style="background: #ed2129;"
+                                            <button class="px-3 btn btn-outline-secondary" style="background: #44A14C;"
                                                 type="submit" id="button-addon2">
                                                 <i class="fa-regular fa-paper-plane"></i>
                                             </button>
