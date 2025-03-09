@@ -28,8 +28,8 @@
         }
 
         .page-item.active {
-            background-color: #ef373e;
-            border: 1px solid #ef373e;
+            background-color: #44A14C;
+            border: 1px solid #44A14C;
         }
 
         .page-item.active a {
