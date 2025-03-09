@@ -181,8 +181,8 @@
                     {{-- All Brands Menu --}}
 
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link main-menu-link" href="javascript:void(0)" id="navbarDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link main-menu-link" href="javascript:void(0)" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Brands
                         </a>
 
@@ -298,8 +298,8 @@
 
             <form class="ml-auto mr-3 searchbox" action="{{ route('product.search') }}" method="POST">
                 @csrf
-                <input type="search" placeholder="Search......" name="search" class="searchbox-input"
-                    id="search" autocomplete="off" name="search" onkeyup="buttonUp();" required>
+                <input type="search" placeholder="Search......" name="search" class="searchbox-input" id="search"
+                    autocomplete="off" name="search" onkeyup="buttonUp();" required>
                 <button class="searchbox-submit" value="GO"><i class="icofont-search-2"></i></button>
                 <span class="searchbox-icon"><i class="icofont-search-2"></i></span>
             </form>
@@ -314,14 +314,14 @@
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
                                         type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
-                                        <i class="fa-solid fa-user text-danger userLogin"></i>
+                                        <i class="fa-user userLogin"></i>
 
                                     </a>
                                 @else
                                     <a href="javascript:void(0);" id="userIcon" class="border-0 bg-none text-muted"
                                         type="button" id="dropdownMenuButton" data-toggle="dropdown"
                                         aria-haspopup="true" aria-expanded="false" style="font-size: 20px;">
-                                        <i class="pr-2 fa-solid fa-user text-muted userLogin"></i>
+                                        <i class="pr-2 fa-user userLogin"></i>
                                     </a>
                                 @endif
 
@@ -329,7 +329,6 @@
                                     style="">
 
                                     @if (Auth::user())
-
                                         <a class="dropdown-item" href="{{ route('template.one.dashboard') }}">
 
                                             <img src="{{ url('https://ui-avatars.com/api/?name=' . urlencode(Auth::user()->name)) }}"
