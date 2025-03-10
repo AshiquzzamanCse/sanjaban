@@ -93,8 +93,8 @@ Route::controller(TemplateOneController::class)->group(function () {
     Route::get('/product/category/{id}/{category_slug}', 'CategoryRelatedProductOne');
 
     //Offer Category Page
-    Route::get('/offer-categorywise/product/{id}', 'OfferCategoryRelatedProductOne')->name('offer-categorywise.product');
-    Route::get('/offerwise/product/{id}', 'OfferWiseProductOne')->name('offerwise.product');
+    // Route::get('/offer-categorywise/product/{id}', 'OfferCategoryRelatedProductOne')->name('offer-categorywise.product');
+    // Route::get('/offerwise/product/{id}', 'OfferWiseProductOne')->name('offerwise.product');
 
     //Child Category
     Route::get('/product/childcategory/{id}/{childcategory_slug}', 'ChilldCategoryRelatedProductOne');
@@ -196,36 +196,36 @@ Route::controller(TemplateOneCartController::class)->group(function () {
 });
 
 // Template Two Controller
-Route::controller(TemplateTwoController::class)->group(function () {
+// Route::controller(TemplateTwoController::class)->group(function () {
 
-    //Template Two
-    Route::get('/product-single/{id}', 'SingleProductTemplateTwo');
+//     //Template Two
+//     Route::get('/product-single/{id}', 'SingleProductTemplateTwo');
 
-    //All Product
-    Route::get('/all-product-dadabhaai', 'TemplateTwoAllProduct')->name('template.two.all.product');
+//     //All Product
+//     Route::get('/all-product-dadabhaai', 'TemplateTwoAllProduct')->name('template.two.all.product');
 
-    //Faq
-    Route::get('/faq-dadabhaai', 'TemplateTwoFaq')->name('template.two.faq');
+//     //Faq
+//     Route::get('/faq-dadabhaai', 'TemplateTwoFaq')->name('template.two.faq');
 
-    //contact us
-    Route::get('/contact-dadabhaai', 'TemplateTwoContact')->name('template.two.contact');
-    Route::post('/contact/store', 'TemplateTwoContactStore')->name('template.two.contact.store');
+//     //contact us
+//     Route::get('/contact-dadabhaai', 'TemplateTwoContact')->name('template.two.contact');
+//     Route::post('/contact/store', 'TemplateTwoContactStore')->name('template.two.contact.store');
 
-    //Buying Guide
-    Route::get('/buying-guide', 'TemplateTwoBuying')->name('template.two.buying');
+//     //Buying Guide
+//     Route::get('/buying-guide', 'TemplateTwoBuying')->name('template.two.buying');
 
-    //Category Page
-    Route::get('/product/category-dadabhaai/{id}/{category_slug}', 'CategoryWiseProductTemplateTwo');
+//     //Category Page
+//     Route::get('/product/category-dadabhaai/{id}/{category_slug}', 'CategoryWiseProductTemplateTwo');
 
-    // Route for handling the POST request (form submission)
-    Route::post('/product-search-dadabhaai', 'DadabhaaiProductSearch')->name('dadabhaai.product.search');
+//     // Route for handling the POST request (form submission)
+//     Route::post('/product-search-dadabhaai', 'DadabhaaiProductSearch')->name('dadabhaai.product.search');
 
-    // Route for showing search results (GET request)
-    Route::get('/product-search-results', 'showSearchResults')->name('product.search.results');
+//     // Route for showing search results (GET request)
+//     Route::get('/product-search-results', 'showSearchResults')->name('product.search.results');
 
-    // Route for showing search results (GET request)
-    Route::post('/product-store-cart-product', 'AddToCartProductHomeAstell');
-});
+//     // Route for showing search results (GET request)
+//     Route::post('/product-store-cart-product', 'AddToCartProductHomeAstell');
+// });
 
 
 Route::post('/submit-email', [TemplateOneController::class, 'submit'])->name('submit.email');

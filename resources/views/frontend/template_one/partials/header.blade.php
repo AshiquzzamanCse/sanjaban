@@ -682,54 +682,7 @@
                     </div>
                 </li>
 
-                {{-- All Offer Menu --}}
-                <li class="nav-item dropdown position-static">
-                    <a class="nav-link dropdown-toggle main-menu-link" href="#" id="navbarDropdownPricing"
-                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Offers
-                    </a>
-                    @php
-                        $offers = App\Models\Admin\OfferCategory::where('status', '1')
-                            ->orderBy('offer_category_name', 'ASC')
-                            ->limit(4)
-                            ->latest()
-                            ->get();
-                    @endphp
-                    <div class="dropdown-menu dropdown-menu-full main-menu-drop"
-                        style="width:100% !important;border-top: 2px solid #cd3301"
-                        aria-labelledby="navbarDropdownPricing">
-                        <div class="container">
-                            <div class="row">
-                                @foreach ($offers as $offer)
-                                    <div class="col-lg-3">
-                                        <a href="javascript:;"
-                                            class="main-sub-menu">{{ $offer->offer_category_name }}</a>
-                                        <div class="link-divider"></div>
-
-                                        <ul class="submenu level-1">
-
-                                            @php
-                                                $offerNames = App\Models\Admin\Offer::where('status', '1')
-                                                    ->where('offer_category_id', $offer->id)
-                                                    ->limit(4)
-                                                    ->latest()
-                                                    ->get();
-                                            @endphp
-
-                                            @forelse ($offerNames as $offerName)
-                                                <li class=""> <a
-                                                        href="{{ route('offerwise.product', $offerName->id) }}">{{ $offerName->name }}</a>
-                                                </li>
-                                            @empty
-                                            @endforelse
-
-                                        </ul>
-                                    </div>
-                                @endforeach
-                            </div>
-                        </div>
-                    </div>
-                </li>
+               
                 <li class="nav-item active">
                     <a class="nav-link main-menu-link" href="{{ route('template.one.all_product') }}">Products
                         <span class="sr-only">(current)</span></a>
