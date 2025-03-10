@@ -17,17 +17,20 @@
                     <div class="row">
                         <div class="col-sm-12">
                             @php
-    $offerImage = !empty($offerwiseproduct->category->offer_category_image)
-        ? asset('storage/offer_category_image/' . $offerwiseproduct->category->offer_category_image)
-        : asset('img/search.jpg');
-@endphp
+                                $offerImage = !empty($offerwiseproduct->category->offer_category_image)
+                                    ? asset(
+                                        'storage/offer_category_image/' .
+                                            $offerwiseproduct->category->offer_category_image,
+                                    )
+                                    : asset('');
+                            @endphp
 
-<div class="shop-banner-bg main-shop-page-banner pt-120 pb-120 mb-50"
-     style="background-image: url('{{ $offerImage }}') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;">
-    <div class="collection-text">
-        <h5 class="f-800"><a href="javascript:;"></a></h5>
-    </div>
-</div>
+                            <div class="shop-banner-bg main-shop-page-banner pt-120 pb-120 mb-50"
+                                style="background-image: url('{{ $offerImage }}') !important; background-size: cover !important; background-position: center !important; background-repeat: no-repeat !important;">
+                                <div class="collection-text">
+                                    <h5 class="f-800"><a href="javascript:;"></a></h5>
+                                </div>
+                            </div>
 
                         </div>
                     </div>

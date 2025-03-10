@@ -13,7 +13,7 @@
                             @php
                                 $offerImage = !empty($offercat->offer_category_image)
                                     ? asset('storage/offer_category_image/' . $offercat->offer_category_image)
-                                    : asset('img/search.jpg');
+                                    : asset('');
                             @endphp
 
                             <div class="offer-banner offer--banner__bg mb-30">

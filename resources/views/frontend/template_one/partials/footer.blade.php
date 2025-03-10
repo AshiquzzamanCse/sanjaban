@@ -130,7 +130,7 @@
                             <div class="footer-title">
                                 <h6 class="f-800">Join Us</h6>
                             </div>
-                            <div>
+                            {{-- <div>
                                 <div id="fb-root"></div>
                                 <script async defer crossorigin="anonymous"
                                     src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0&appId=1071946983902795" nonce="2wAZemwC">
@@ -141,7 +141,7 @@
                                         data-adapt-container-width="true" data-hide-cover="false"
                                         data-show-facepile="true"></div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
 
