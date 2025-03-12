@@ -13,7 +13,8 @@
                             <div class="p-3 single-brand">
                                 <a href="{{ url('product/brand/' . $brand->id . '/' . $brand->brand_slug) }}">
                                     <img style="width: 150px;" class="img-fluid"
-                                        src="{{ asset('storage/brand/' . $brand->icon) }}" alt="{{ $brand->brand_name }}" />
+                                        src="{{ asset('storage/brand/' . $brand->icon) }}"
+                                        alt="{{ $brand->brand_name }}" />
                                 </a>
                             </div>
                         @endforeach
