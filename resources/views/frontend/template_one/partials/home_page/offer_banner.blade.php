@@ -7,7 +7,7 @@
             <div class="row">
                 @foreach ($offercats as $offercat)
                     <div class="col-lg-6">
-                        <a href="{{ route('offer-categorywise.product', $offercat->id) }}"
+                        <a href=""
                            title="{{ $offercat->offer_category_name }}">
 
                             @php
