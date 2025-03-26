@@ -46,6 +46,7 @@
 {{-- <script src="https://kit.fontawesome.com/69b7156a94.js" crossorigin="anonymous"></script> --}}
 
 {{-- <script src="{{ asset('frontend/assets/js/font-awesome.js') }}"></script> --}}
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -69,14 +70,12 @@
             arrows: false,
             draggable: true, // Enable dragging
             infinite: true, // Enable infinite loop
-            responsive: [
-                {
-                    breakpoint: 768, // Adjust for mobile screens
-                    settings: {
-                        slidesToShow: 2
-                    }
+            responsive: [{
+                breakpoint: 768, // Adjust for mobile screens
+                settings: {
+                    slidesToShow: 2
                 }
-            ]
+            }]
         });
     });
 </script>
