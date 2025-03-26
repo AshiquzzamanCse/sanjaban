@@ -6,7 +6,7 @@
 
         @if (count($heros) > 0)
             @foreach ($heros as $hero)
-                <div style="height: 700px;" class="single__hero single-slider hero__bg pt-140 pb-120 home-main-banner"
+                <div style="height: 650px;" class="single__hero single-slider hero__bg pt-120 pb-120 home-main-banner"
                     data-background="{{ asset($hero->banner_image) }}">
                 </div>
             @endforeach
